@@ -1,0 +1,12 @@
+<h1>Edit Stock</h1>
+<%= form_tag "/stocks/#{@stock.id}", method: :patch do %>
+	<div>
+	<%= label_tag :name %>
+	<%= text_field_tag :name, @stock.name %>
+	</div>
+	<div>
+	<%= label_tag :price %>
+	<%= text_field_tag :price, @stock.price %>
+	</div>
+	<%= submit_tag "Update stock" %>
+	<% end %>

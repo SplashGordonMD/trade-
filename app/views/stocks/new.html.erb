@@ -1,0 +1,12 @@
+<h1>Add another Stock</h1>
+<%= form_tag '/stocks', method: :post do %>
+	<div>
+	<%= label_tag :name %>
+	<%= text_field_tag :name %>
+	</div>
+	<div>
+	<%= label_tag :price %>
+	<%= text_field_tag :price %>
+	</div>
+	<%= submit_tag "New stock" %>
+	<% end %>
