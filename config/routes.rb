@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/stocks' => 'stocks#create'
   get '/stocks/:id' => 'stocks#show'
   get '/stocks/:id/edit' => 'stocks#edit'
-  patch '/stocks/id' => 'stocks#update'
+  patch '/stocks/:id' => 'stocks#update'
   delete '/stocks/:id' => 'stocks#destroy'
 end
 

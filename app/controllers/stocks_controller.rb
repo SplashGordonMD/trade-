@@ -12,15 +12,15 @@ class StocksController < ApplicationController
      render 'create.html.erb'
     end
   def show
-      @stock = Stock.find_by(id: params[:id])
+     @stock = Stock.find_by(id: params[:id])
      render 'show.html.erb'
     end
   def edit
-     @stock = Stock.find_by(id: params[:id])
+      @stock = Stock.find_by(id: params[:id])
      render 'edit.html.erb'
     end
   def update
-    @stock = Stock.find.by(id: params[:id])
+    @stock = Stock.find_by(id: params[:id])
     @stock.name = params[:name]
     @stock.price = params[:price]
     @stock.save
@@ -28,7 +28,7 @@ class StocksController < ApplicationController
     end
   def destroy
     @stock = Stock.find_by(id: params[:id])
-    @message.destroy 
+    @stock.destroy 
      render 'destroy.html.erb'
     end
 
