@@ -9,6 +9,12 @@
   </head>
 
   <body>
+     <div class="container">
+       <% flash.each do |stock, price| %>
+        <p> <%= message %> </p>
+       <% end %>
+
     <%= yield %>
+   </div> 
   </body>
 </html>
