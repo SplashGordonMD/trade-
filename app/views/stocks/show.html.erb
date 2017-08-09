@@ -2,13 +2,15 @@
 <h2><%= @stock.name %></h2>
 <h2>Stock: <%= @stock.name %></h2>
 <p>Price: <%= @stock.price %></p>
-<div>
- <a href="/stocks">Back to all Stocks</a>
-</div>
+
 <div>
  <%= link_to "Remove this Stock", "/stocks/#{@stock.id}", method: :delete %>
 </div>
 
- <%= form_tag '/stocks/#{@stock.id}', method: :delete do %>
+ <%= form_tag "/stocks/#{@stock.id}", method: :delete do %>
   <input type="submit" value="Delete">
  <% end %> 
+
+ 
+
+

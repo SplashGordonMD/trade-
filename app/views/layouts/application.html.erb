@@ -12,7 +12,13 @@
     <div class="container">
       <% flash.each do |stock, price| %>
         <div class="alert alert-<% stock %>" role="alert"><%= message %></div>
-          <% end %>
+        <div class="alert alert-<% stock %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+         <%= message %>
+         </div>
+       <% end %>
+
 
     <%= yield %>
    </div> 
