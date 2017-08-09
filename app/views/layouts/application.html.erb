@@ -9,10 +9,10 @@
   </head>
 
   <body>
-     <div class="container">
-       <% flash.each do |stock, price| %>
-        <p> <%= message %> </p>
-       <% end %>
+    <div class="container">
+      <% flash.each do |stock, price| %>
+        <div class="alert alert-<% stock %>" role="alert"><%= message %></div>
+          <% end %>
 
     <%= yield %>
    </div> 

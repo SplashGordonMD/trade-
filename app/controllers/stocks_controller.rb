@@ -2,25 +2,33 @@ class StocksController < ApplicationController
   def index
      @stocks = Stock.all
      render 'index.html.erb'
-    end
+  end
+
   def new
      render 'new.html.erb'
-    end
+  end
+
   def create
-     stock = Stock.new(name: params[:name], price: params[:price])
+     stock = Stock.new(
+      name: params["name"],
+      price: params["price"]
+      )
      stock.save
      redirect_to "/stocks/#{stock.id}"
-    end
+  end
+
   def show
      stock_id = params[:id]
      @stock = Stock.find_by(id: stock_id)
      render 'show.html.erb'
-    end
+  end
+
   def edit
      stock_id = params[:id]
      @stock = Stock.find_by(id: stock_id)
      render 'edit.html.erb'
-    end
+  end
+  
   def update
     stock_id = params[:id]
     stock = Stock.find_by(id: stock_id)
@@ -29,13 +37,12 @@ class StocksController < ApplicationController
     stock.save
     flash[:success] = "Stock successfully updated"
     redirect_to "/stocks/#{stock.id}"
-    end
+  end
+
   def destroy
     stock_id = params[:id]
     stock = Stock.find_by(id: stock_id)
     stock.destroy 
     redirect_to "/stocks"
     end
-
-
 end
