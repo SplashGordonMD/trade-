@@ -2,7 +2,9 @@
 <h2><%= @stock.name %></h2>
 <h2>Stock: <%= @stock.name %></h2>
 <p>Price: <%= @stock.price %></p>
-
+<div>
+  <a href="/stocks">Back to all stocks</a>
+</div>  
 <div>
  <%= link_to "Remove this Stock", "/stocks/#{@stock.id}", method: :delete %>
 </div>

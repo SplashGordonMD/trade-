@@ -1,5 +1,5 @@
 <h1>Edit Stock</h1>
-<%= form_tag "/stocks/:id", method: :patch do %>
+<%= form_tag "/stocks/#{@stock.id}", method: :patch do %>
 	<div class="form-group">
 	<%= label_tag :name %>
 	<%= text_field_tag :name, @stock.name, class: "form-control" %>
@@ -10,3 +10,14 @@
 	</div>
 	<%= submit_tag "Edit stock", class: "btn btn-primary" %>
 	<% end %>
+
+<hi>Edit Stock</hi>
+<%= form_tag '/stock/:id', method: :patch do %>
+	<div>
+	  Name: <input type="text" name="stock" value="<%= @stock.name %>">	
+	</div>
+	<div>
+	  Price: <input type="integer" name="price" value="<%= @stock.price %>">
+	</div>
+	<input type="submit" value="Update Stock Listing">
+	<% end %>  

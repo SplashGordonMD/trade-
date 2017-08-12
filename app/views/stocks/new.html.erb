@@ -1,12 +1,10 @@
 <h1>Add New Stock</h1>
-<%= form_tag '/stocks', method: :post do %>
+<%= form_tag '/stocks', method: :patch do %>
 	<div>
-	<%= label_tag :name %>
-	<%= text_field_tag :name %>
+      Name: <input type="text" name="stock">
 	</div>
 	<div>
-	<%= label_tag :price %>
-	<%= text_field_tag :price %>
+	  Price: <input type="integer" name="price">
 	</div>
-	<%= submit_tag "New stock" %>
+	<input type="submit" value="Create New Stock Listing">
 	<% end %>

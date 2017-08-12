@@ -35,8 +35,8 @@ class StocksController < ApplicationController
     stock.name = params[:name]
     stock.price = params[:price]
     stock.save
-    flash[:danger] = "Stock successfully updated"
-    redirect_to "/stocks"
+    flash[:success] = "Stock successfully updated"
+    redirect_to "/stocks/#{stock.id}"
   end
 
   def destroy
