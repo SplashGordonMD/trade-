@@ -13,35 +13,35 @@ class StocksController < ApplicationController
       name: params["name"],
       price: params["price"]
       )
-     stock.save
+     @stock.save
      redirect_to "/stocks/#{stock.id}"
   end
 
   def show
      stock_id = params[:id]
-     @stock = Stock.find_by(id: stock_id)
+     @stock = Stock.find_by(id: params[:id])
      render 'show.html.erb'
   end
 
   def edit
      stock_id = params[:id]
-     @stock = Stock.find_by(id: stock_id)
+     @stock = Stock.find_by(id: params[:id])
      render 'edit.html.erb'
   end
   
   def update
     stock_id = params[:id]
-    stock = Stock.find_by(id: stock_id)
-    stock.name = params[:name]
-    stock.price = params[:price]
-    stock.save
+    @stock = Stock.find_by(id: params[:id])
+    @stock.name = params[:name]
+    @stock.price = params[:price]
+    @stock.save
     flash[:success] = "Stock successfully updated"
     redirect_to "/stocks/#{stock.id}"
   end
 
   def destroy
     stock_id = params[:id]
-    stock = Stock.find_by(id: stock_id)
+    stock = Stock.find_by(id: params[:id])
     stock.destroy 
     redirect_to "/stocks"
   end

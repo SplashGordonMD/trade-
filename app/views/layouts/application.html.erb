@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trade</title>
+    <title>Stock Trading Application</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -30,9 +30,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="">Charts</a></li>
-            <li><a href="">Moving Averages</a></li>
-            <li><a href="">Company Fundamentals</a></li>
+            <li><a href="/stocks?sort=title">Name</a></li>
+            <li><a href="/stocks?sort=price">Price</a></li>
+            <li><a href="#">Company Fundamentals</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">About Russel 1000</a></li>
             <li role="separator" class="divider"></li>
@@ -66,7 +66,7 @@
       <% flash.each do |stock, price| %>
         <div class="alert alert-<% stock %> alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <%= message %>
+         
          </div>
        <% end %>
 
