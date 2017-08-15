@@ -9,11 +9,8 @@ class StocksController < ApplicationController
   end
 
   def create
-     stock = Stock.new(
-      name: params["name"],
-      price: params["price"]
-      )
-     @stock.save
+     stock = Stock.new(name: params[:name], price: params[:price])
+     stock.save
      redirect_to "/stocks/#{stock.id}"
   end
 
@@ -41,8 +38,8 @@ class StocksController < ApplicationController
 
   def destroy
     stock_id = params[:id]
-    stock = Stock.find_by(id: params[:id])
-    stock.destroy 
+    @stock = Stock.find_by(id: params[:id])
+    @stock.destroy 
     redirect_to "/stocks"
   end
 end
